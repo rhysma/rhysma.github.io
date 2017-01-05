@@ -5,36 +5,62 @@
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        $(document).on("pagecreate",function(event){
+        $(window).on("orientationchange",function(event){
+            if(window.orientation == 0)
+            {
+                $("#mode").text("The orientation has changed to portrait!")
+            }
+            else
+            {
+                $("#mode").text("The orientation has changed to landscape!")
+            }             
+          });
+        });
+    </script>
 </head>
 <body>
 
-    <div data-role="page" id="pageone">
+    <div data-role="page" id="home">
         <div data-role="header">
             <h1>Welcome To My Homepage</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#contact" data-icon="grid">Contact</a></li>
+                </ul>
+            </div>
         </div>
 
         <div data-role="main" class="ui-content">
-            <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
-            <a href="#pagetwo">Go to Page Two</a>
+            <p>Welcome to the home page!</p>
+            <p id="mode"></p>
         </div>
 
         <div data-role="footer">
-            <h1>Footer Text</h1>
+            <h1>123 Fake St. Anywhere USA</h1>
         </div>
     </div>
 
-    <div data-role="page" id="pagetwo">
+    <div data-role="page" id="contact">
         <div data-role="header">
-            <h1>Welcome To My Homepage</h1>
+            <h1>Contact Page</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home">Home</a></li>
+                    <li><a href="#contact" data-icon="grid">Contact</a></li>
+                </ul>
+            </div>
         </div>
 
         <div data-role="main" class="ui-content">
-            <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
-            <a href="#pageone">Go to Page One</a>
+            <p>This is the contact page.</p>
+            <p id="mode"></p>
         </div>
 
         <div data-role="footer">
-            <h1>Footer Text</h1>
+            <h1>123 Fake St. Anywhere USA</h1>
         </div>
     </div>
 
