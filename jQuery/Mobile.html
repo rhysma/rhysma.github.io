@@ -1,47 +1,42 @@
 ﻿<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/[version]/jquery.mobile-1.4.5.min.css" />
-    <script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/[version]/jquery.mobile-1.4.5.min.js"></script>
-    <title>jQuery Mobile Page</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <body>
 
-    <!-- Start of first page -->
-    <div data-role="page" id="foo">
-
+    <div data-role="page" id="pageone">
         <div data-role="header">
-            <h1>Foo</h1>
-        </div><!-- /header -->
+            <h1>Welcome To My Homepage</h1>
+        </div>
 
-        <div role="main" class="ui-content">
-            <p>I'm first in the source order so I'm shown as the page.</p>
-            <p>View internal page called <a href="#bar">bar</a></p>
-        </div><!-- /content -->
+        <div data-role="main" class="ui-content">
+            <p>Welcome! If you click on the link below, it will take you to Page Two.</p>
+            <a href="#pagetwo">Go to Page Two</a>
+        </div>
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
-        </div><!-- /footer -->
-    </div><!-- /page -->
-    <!-- Start of second page -->
-    <div data-role="page" id="bar">
+            <h1>Footer Text</h1>
+        </div>
+    </div>
 
+    <div data-role="page" id="pagetwo">
         <div data-role="header">
-            <h1>Bar</h1>
-        </div><!-- /header -->
+            <h1>Welcome To My Homepage</h1>
+        </div>
 
-        <div role="main" class="ui-content">
-            <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
-            <p><a href="#foo">Back to foo</a></p>
-        </div><!-- /content -->
+        <div data-role="main" class="ui-content">
+            <p>This is Page Two. If you click on the link below, it will take you to Page One.</p>
+            <a href="#pageone">Go to Page One</a>
+        </div>
 
         <div data-role="footer">
-            <h4>Page Footer</h4>
-        </div><!-- /footer -->
-    </div><!-- /page -->
+            <h1>Footer Text</h1>
+        </div>
+    </div>
+
 </body>
 </html>
