@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Sample</title>
+    <link href="css\bootstrap.css" rel="stylesheet" />
+    <link href="css\site.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Sample</h1>
+    <p></p>
+    <h2>Grid Example</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8" style="background-color:aquamarine;">
+                Parent fixed-width column
+                <div class="row" style="background-color:cadetblue;">
+                    <div class="col-md-6">Nested column</div>
+                    <div class="col-md-6">Nested column</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4" style="background-color:cornflowerblue;">Fluid ..</div>
+            <div class="col-md-4" style="background-color:darkolivegreen;">.. and full-width ..</div>
+            <div class="col-md-4" style="background-color:darkturquoise;">.. example</div>
+        </div>
+    </div>
+    <p></p>
+    <h2>Navigation Example</h2>
+    <h4>Navigation with hover drop-down</h4>
+    <div class="example-nav example-nav-2 navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">BS3 Modified Nav</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="http://google.com">Google</a>
+                    </li>
+                    <li>
+                        <a href="http://bing.com">Bing</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="http://reddit.com" class="dropdown-toggle" data-toggle="dropdown">Reddit <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="http://reddit.com/r/webdev">/r/webdev</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li class="dropdown-header">
+                                Nav header
+                            </li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                            <li>
+                                <a href="#">One more separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h4>How do you do it?</h4>
+    <pre class="line-numbers">
+        <code class="language-javascript">$('.dropdown-toggle').click(function() {
+            var location = $(this).attr('href');
+            window.location.href = location;
+             return false;
+        });</code>
+    </pre>
+    <p></p>
+    <h2>Images and Icons</h2>
+    <p>Images in Bootstrap can be made responsive by simply giving them the .img-responsive class. This will apply max-width:100%; height:auto; and display:block; to the image in question, so that it scales to the parent element.</p>
+    <div class="bs-example">
+        <h4>Non-Responsive Image</h4>
+        <div class="box">
+            <img src="images/sky.jpg" alt="Cloudy Sky">
+        </div>
+        <hr>
+        <h4>Responsive Image</h4>
+        <div class="box">
+            <img src="images/sky.jpg" class="img-responsive" alt="Cloudy Sky">
+        </div>
+    </div>
+    
+    <script src="\\jQuery\jquery-3.1.1.min.js"></script>
+    <script src="bootstrap.js"></script>
+    <script>
+        $('.dropdown-toggle').click(function() {
+    var location = $(this).attr('href');
+    window.location.href = location;
+    return false;
+});
+    </script>
+</body>
+</html>

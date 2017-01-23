@@ -1,0 +1,10 @@
+.table-hover > tbody > tr:hover {
+    background-color: #808080;
+}
+
+  @media only screen and (min-width : 768px) {
+    /* Make Navigation Toggle on Desktop Hover */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
