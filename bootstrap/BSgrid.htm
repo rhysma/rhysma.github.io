@@ -29,6 +29,7 @@
         </div>
     </div>
     <p></p>
+    <hr />
     <h2>Navigation Example</h2>
     <h4>Navigation with hover drop-down</h4>
     <div class="example-nav example-nav-2 navbar navbar-default">
@@ -82,6 +83,7 @@
         });</code>
     </pre>
     <p></p>
+    <hr />
     <h2>Images and Icons</h2>
     <p>Images in Bootstrap can be made responsive by simply giving them the .img-responsive class. This will apply max-width:100%; height:auto; and display:block; to the image in question, so that it scales to the parent element.</p>
     <div class="bs-example">
@@ -95,15 +97,52 @@
             <img src="images/sky.jpg" class="img-responsive" alt="Cloudy Sky">
         </div>
     </div>
-    
-    <script src="\\jQuery\jquery-3.1.1.min.js"></script>
-    <script src="bootstrap.js"></script>
-    <script>
+    <p></p>
+    <hr/>
+    <h2>Modal Example</h2>
+    <div class="bs-example">
+        <!-- Button HTML (to Trigger Modal) -->
+         <a href="#" class="btn btn-lg btn-primary">Launch Demo Modal</a>
+
+      <!--  Modal HTML -->
+        <div id="myModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Confirmation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to save changes you made to document before closing?</p>
+                        <p class="text-warning"><small>If you don't save, your changes will be lost.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js\jquery-3.1.1.min.js"></script>
+    <script src="js\bootstrap.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+	$(".btn").click(function(){
+		$("#myModal").modal('show');
+	});
+});
+
         $('.dropdown-toggle').click(function() {
     var location = $(this).attr('href');
     window.location.href = location;
     return false;
 });
+
     </script>
 </body>
 </html>
