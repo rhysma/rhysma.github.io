@@ -3,59 +3,94 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 </head>
 <body>
-    <div data-role="header">
-        <a href="https://rhysma.github.io/jQuery/mobile/Mobile.html" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">CIS Class Resources</a>
-    </div>
 
-        <div data-role="page" id="content">
-            <p>This website is for students in my OTC and MSU classes.</p>
-            
+    <div data-role="page" id="home">
+        <div data-role="header" style="align-content:center";>
+            <h1>CIS Class Resources</h1>
+            <img src="logo.png" />
             <div data-role="navbar">
                 <ul>
-                    <li><a href="#bootstrap" data-icon="carat-r" data-transition="slide">Bootstrap Examples</a></li>
+                    <li><a href="#home" data-icon="home" data-transition="slide">Home</a></li>
+                    <li><a href="#bootstrap" data-icon="carat-r" data-transition="slide">Boostrap Examples</a></li>
                     <li><a href="#jquery" data-icon="carat-r" data-transition="slide">jQuery Examples</a></li>
                 </ul>
             </div>
-            <div data-role="main">
-
-            </div>
-
-            <div data-role="page" class="ui-content" id="bootstrap">
-                <h3>Bootstrap Examples</h3>
-                <a href="https://rhysma.github.io/bootstrap/starter.htm">Starter HTML5 Page</a> (right-click, save-as)<br />
-                <a href="https://rhysma.github.io/bootstrap/starterBSExample.htm">Bootstrap Sample Page</a><br />
-                <a href="https://rhysma.github.io/bootstrap/BSgrid.htm">Another Bootstrap example page</a><br />
-                <a href="https://rhysma.github.io/bootstrap/bootstrap-javascript.html">Using JavaScript with Bootstrap</a><br />
-            </div>
-
-            <div data-role="page" class="ui-content" id="jquery">
-                <h3>jQuery Examples</h3>
-                <a href="https://rhysma.github.io/jQuery/navExample/Default.html">jQuery and Bootstrap Navigation Example</a><br />
-                <a href="https://rhysma.github.io/jQuery/dashboard/Default.html">jQuery and Bootstrap Dashboard Example</a><br />
-                <a href="https://rhysma.github.io/jQuery/uiExample/Default.html">jQuery UI Example</a><br />
-                <a href="https://rhysma.github.io/jQuery/flipboard/index.html">Flipboard Site</a><small> (Project from: Code Academy - <a href="https://www.codecademy.com/skills/make-an-interactive-website">Make an Interactive Website)</a> </small><br />
-            </div>
-
-            <div data-role="footer" class="ui-content">
-                <span class="site-footer-credits"></span>
-                <span class="site-footer-credits">
-                    <br />
-                    <a href="http://www.facebook.com/rhysma">Facebook</a> -
-                    <a href="http://twitter.com/therhysma">Twitter</a>  -
-                    <a href="http://www.instagram.com/therhysma">Instagram</a>
-                    <br />
-                    <a href="http://www.rhysma.com">Personal website</a>
-                </span>
-            </div>
-
         </div>
 
+        <div data-role="main" class="ui-content">
+            <p>This website is for students in my OTC and MSU classes.</p>
+            <p>Click on the buttons above to see examples</p>
+        </div>
+
+        <div data-role="footer">
+            <a href="http://www.facebook.com/rhysma">Facebook</a> -
+            <a href="http://twitter.com/therhysma">Twitter</a>  -
+            <a href="http://www.instagram.com/therhysma">Instagram</a>  -
+            <a href="http://www.rhysma.com">Personal website</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="bootstrap">
+        <div data-role="header">
+            <h1>Bootstrap Examples Page</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-transition="slide">Home</a></li>
+                    <li><a href="#bootstrap" data-icon="carat-r" data-transition="slide">Boostrap Examples</a></li>
+                    <li><a href="#jquery" data-icon="carat-r" data-transition="slide">jQuery Examples</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h3>Bootstrap Examples</h3>
+            <a href="https://rhysma.github.io/bootstrap/starter.htm">Starter HTML5 Page</a> (right-click, save-as)<br />
+            <a href="https://rhysma.github.io/bootstrap/starterBSExample.htm">Bootstrap Sample Page</a><br />
+            <a href="https://rhysma.github.io/bootstrap/BSgrid.htm">Another Bootstrap example page</a><br />
+            <a href="https://rhysma.github.io/bootstrap/bootstrap-javascript.html">Using JavaScript with Bootstrap</a><br />
+        </div>
+
+        <div data-role="footer">
+            <a href="http://www.facebook.com/rhysma">Facebook</a> -
+            <a href="http://twitter.com/therhysma">Twitter</a>  -
+            <a href="http://www.instagram.com/therhysma">Instagram</a>  -
+            <a href="http://www.rhysma.com">Personal website</a>
+        </div>
+    </div>
+
+    <div data-role="page" id="jquery">
+        <div data-role="header">
+            <h1>jQuery Examples Page</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-transition="slide">Home</a></li>
+                    <li><a href="#bootstrap" data-icon="carat-r" data-transition="slide">Boostrap Examples</a></li>
+                    <li><a href="#jquery" data-icon="carat-r" data-transition="slide">jQuery Examples</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h3>jQuery Examples</h3>
+            <a href="https://rhysma.github.io/jQuery/navExample/Default.html">jQuery and Bootstrap Navigation Example</a><br />
+            <a href="https://rhysma.github.io/jQuery/dashboard/Default.html">jQuery and Bootstrap Dashboard Example</a><br />
+            <a href="https://rhysma.github.io/jQuery/uiExample/Default.html">jQuery UI Example</a><br />
+            <a href="https://rhysma.github.io/jQuery/flipboard/index.html">Flipboard Site</a><small> (Project from: Code Academy - <a href="https://www.codecademy.com/skills/make-an-interactive-website">Make an Interactive Website)</a> </small><br />
+        </div>
+
+        <div data-role="footer">
+            <a href="http://www.facebook.com/rhysma">Facebook</a> -
+            <a href="http://twitter.com/therhysma">Twitter</a>  -
+            <a href="http://www.instagram.com/therhysma">Instagram</a>  -
+            <a href="http://www.rhysma.com">Personal website</a>
+        </div>
+    </div>
+        
 
 </body>
 </html>
