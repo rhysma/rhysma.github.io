@@ -2,17 +2,24 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-
+    <style type="text/css">
+        body {
+	background-color: #e9e9e9 ;
+	color: #333333;
+	text-shadow: 0 /*{a-bar-shadow-x}*/ 1px /*{a-bar-shadow-y}*/ 0 /*{a-bar-shadow-radius}*/ #eeeeee /*{a-bar-shadow-color}*/;
+	font-weight: bold;
+}
+    </style>
 </head>
 <body>
 
     <div data-role="page" id="home">
-        <div data-role="header" style="align-content:center";>
-            <h1>CIS Class Resources</h1>
-            <img src="logo.png" />
+        <div data-role="header">
+            <h1>CIS Resources</h1>
             <div data-role="navbar">
                 <ul>
                     <li><a href="#home" data-icon="home" data-transition="slide">Home</a></li>
@@ -38,7 +45,7 @@
     <div data-role="page" id="bootstrap">
         <div data-role="header">
             <h1>Bootstrap Examples Page</h1>
-            <div data-role="navbar">
+            <div data-role="navbar"">
                 <ul>
                     <li><a href="#home" data-icon="home" data-transition="slide">Home</a></li>
                     <li><a href="#bootstrap" data-icon="carat-r" data-transition="slide">Boostrap Examples</a></li>
@@ -56,7 +63,7 @@
         </div>
 
         <div data-role="footer">
-            <a href="http://www.facebook.com/rhysma">Facebook</a> -
+            <a href="http://www.facebook.com/rhysma"  class=".ui-btn-corner-all">Facebook</a> -
             <a href="http://twitter.com/therhysma">Twitter</a>  -
             <a href="http://www.instagram.com/therhysma">Instagram</a>  -
             <a href="http://www.rhysma.com">Personal website</a>
