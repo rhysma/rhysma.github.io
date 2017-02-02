@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="jquery.vibrate.js"></script>
     <style>
         html, body {
             padding: 0;
@@ -63,6 +64,11 @@
     <h3>Long press the square for 750 milliseconds to see the above code applied:</h3>
     <div class="boxHold"></div>
 
+    <h3>Click to initiate vibration</h3>
+    <div id="btnVibe">
+        <div class="ui button fluid orange vibrate">Try It!</div>
+    </div>
+
     <script>
         //code for the swipe event
         $(function(){
@@ -90,6 +96,9 @@
                 $(event.target).addClass("taphold");
             }
         });
+
+        //code for the vibrate
+        $("#btnVibe .button").vibrate("short");
     </script>
 
 </body>
