@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>swiperight demo</title>
-    <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <style>
         html, body {
             padding: 0;
@@ -69,7 +70,7 @@
     <script>
 $(function(){
     // Bind the swiperightHandler callback function to the swipe event on div.box
-  $( "div.box" ).on( "swiperight", swiperightHandler );
+  $( ".box" ).on( "swiperight", swiperightHandler );
 
   // Callback function references the event target and adds the 'swiperight' class to it
   function swiperightHandler( event ){
