@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AngularJS List Filtering and Sorting</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="myApp" >
+    <h2>Filters for Modifying Output</h2>
+    <div ng-controller="personCtrl">
+        Name:<input type="text" ng-model="firstName" />
+        <p>The name is {{ firstName | uppercase }}</p>
+    </div>
+    <hr/>
+    <h2>Filters for Formatting</h2>
+    <div ng-controller="costCtrl">
+        <p>Price: {{ price | currency }}</p>
+    </div>
+    <hr />
+    <h2>Filters Based on Input</h2>
+    <div ng-controller="namesCtrl">
+        <p>Letter: <input type="text" ng-model="test"></p>
+        <ul>
+            <li ng-repeat="x in names | filter : test">
+                {{ x }}
+            </li>
+        </ul>
+    </div>
+    <hr />
+    <h2>Sort Array Based on Value</h2>
+    <p>Grade: <input type="text" ng-model="lettergrade"></p>
+
+    <div ng-controller="gradesCtrl">
+        <div ng-repeat="subject in results.subjects | filter:{grade:lettergrade}"> 
+            <p ng-model="subject.title">{{subject.title}}</p>
+        </div>
+    </div>
+
+</body>
+</html>
