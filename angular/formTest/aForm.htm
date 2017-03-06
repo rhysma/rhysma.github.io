@@ -1,0 +1,83 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS and PHP Form Demo</title>
+    <!-- LOAD JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+    <!-- LOAD ANGULAR -->
+    <script src="angular.min.js"></script>
+    <!-- PROCESS FORM WITH AJAX (NEW) -->
+    <script>
+
+    // define angular module/app
+    var formApp = angular.module('formApp', []);
+
+    // create angular controller and pass in $scope and $http
+    function formController($scope, $http) {
+        // create a blank object to hold our form information
+        // $scope will allow this to pass between controller and view
+        $scope.formData = {};
+
+        // process the form
+        $scope.processForm = function () {
+            $http({
+                method: 'POST',
+                url: 'https://phptest-rhysma.c9users.io/formProcess.php',
+                data: $.param($scope.formData),  // pass in data as strings
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+            })
+            .success(function (data) {
+                console.log(data);
+
+                if (!data.success) {
+                    // if not successful, bind errors to error variables
+                    $scope.errorEmail = data.errors.email;
+                    $scope.errorPassword = data.errors.Password;
+                } else {
+                    // if successful, bind success message to message
+                    $scope.message = data.message;
+                }
+            });
+        };
+    }
+
+    </script>
+</head>
+
+<!-- apply the module and controller to our body so angular is applied to that -->
+<body ng-app="formApp" ngcontroller="formController">
+    <!-- SHOW ERROR/SUCCESS MESSAGES -->
+    <div id="messages" ng-show="message">{{ message }}</div>
+
+    <!-- FORM -->
+    <form ng-submit="processForm()">
+        <!-- Email -->
+        <div id="email-group" class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" placeholder="" ng-model="formData.email">
+            <span class="help-block"></span>
+        </div>
+
+        <!-- Password -->
+        <div id="superhero-group" class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control" placeholder="" ng-model="formData.password">
+            <span class="help-block"></span>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit" class="btn btn-success btn-lg btn-block">
+            <span class="glyphicon glyphicon-flash"></span> Submit!
+        </button>
+    </form>
+
+    <!-- SHOW DATA FROM INPUTS AS THEY ARE BEING TYPED -->
+<pre>
+    {{ formData }}
+</pre>
+
+    </body>
+</html>

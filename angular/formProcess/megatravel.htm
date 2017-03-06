@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Mega Travel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+        body {
+            font-family: "Times New Roman", Georgia, Serif;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
+    </style>
+
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-white w3-wide w3-padding-8 w3-card-2">
+    <li>
+      <a href="#home" class="w3-margin-left">Travel Planning</a>
+    </li>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <li class="w3-right w3-hide-small">
+      <a href="#about" class="w3-left">About</a>
+      <a href="#form" class="w3-left w3-margin-right">Book Travel</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="TRAVEL-banner.jpg" alt="Travel" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-xlarge w3-opacity">
+    <h1 class="w3-xxlarge">Mega Travel</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="megalogo.jpg" class="w3-round w3-image w3-opacity-min" alt="logo" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Travel</h1><br>
+      <h5 class="w3-center">Tradition since 1889</h5>
+      <p class="w3-large">The agency was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute iruredolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+     
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Destinations</h1><br>
+      <h4>Brisbane, Australia</h4>
+      <h4>Vancouver, Canada</h4>
+      <h4>New York City, United States</h4>
+      <h4>Berlin, Germany</h4>
+      <h4>Cancun, Mexico</h4>
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="la-travel-collage-20141229.jpg" class="w3-round w3-image w3-opacity-min" alt="destinations" width="500" height="750">
+    </div>
+  </div>
+
+  <hr>
+    <!-- SHOW ERROR/SUCCESS MESSAGES -->
+    <div id="messages" ng-show="message">{{ message }}</div>
+
+  <!-- Form Section -->
+  <div class="w3-container w3-padding-64" id="form" ng-app="myApp" ng-controller="formCtrl" ng-class="{ 'has-error' : errorName }">
+    <h1>Book Travel</h1><br>
+	<form ng-submit="processForm()">
+		<p>Number of adults traveling: <input type="text" ng-model="user.numAdults" size="4"></p>
+        <span class="help-block" ng-show="errorNumAdults">{{ errorNumAdults }}</span>
+		<p>Number of children traveling: <input type="text" ng-model="user.numChildren" size="4"></p>
+        <span class="help-block" ng-show="errorNumChildren">{{ errorNumChildren }}</span>
+		<p>Destination:</p>
+		<input type="radio" ng-model="user.destination" value="aus">Brisbane, Australia<br>
+		<input type="radio" ng-model="user.destination" value="can">Vancouver, Canada<br>
+		<input type="radio" ng-model="user.destination" value="usa">New York City, United States<br>
+		<input type="radio" ng-model="user.destination" value="ger">Berlin, Germany<br>
+		<input type="radio" ng-model="user.destination" value="mex">Cancun, Mexico<br>
+		<p>Date Traveling:</p>
+		<input type="date" ng-model="user.date">
+		<p>Your contact information:</p>
+		<p>Name: <input type="text" ng-model="user.name"></p>
+        <span class="help-block" ng-show="errorName">{{ errorName }}</span>
+		<p>Phone Number: <input type="text" ng-model="user.phone"></p>
+        <span class="help-block" ng-show="errorPhone">{{ errorPhone }}</span>
+		<p>Email Address: <input type="text" ng-model="user.email"></p>
+        <span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>
+        <input type="submit" value="Send" />
+		<input type="button" ng-click="reset()" value="Reset" />
+	<p>form = {{user}}</p>
+	</form>
+
+      <!-- SHOW ERROR/SUCCESS MESSAGES -->
+      <div id="messages" ng-show="message">{{ message }}</div>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+    <p>We offer full-service travel booking for all size groups, large or small. We understand your needs. Do not hesitate to contact us.</p>
+    <p class="w3-text-blue-grey w3-large"><b>42nd Living St, 43043 New York, NY</b></p>
+    <p>You can also contact us by phone 00553123-2323 or email travel@megatravel.com</p>
+    
+</footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+<script src="angular.min.js"></script>
+<script>
+    // define angular module/app
+    var app = angular.module('myApp', []);
+
+    // create angular controller and pass in $scope and $http
+    app.controller('formCtrl', function ($scope, $http) {
+
+    $scope.master = { numAdults: "", numChildren: "", destination: "", date: "", name: "", phone: "", email: "" };
+
+    // process the form
+    $scope.processForm = function () {
+        $http({
+            method: 'POST',
+            url: 'https://phptest-rhysma.c9users.io/emailTest.php',
+            data: $.param($scope.master),  // pass in data as strings
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+        })
+            .then(function (response) {
+
+                var data = response.data;
+                var status = response.status;
+                var statusText = response.statusText;
+                var headers = response.headers;
+                var config = response.config;
+
+                $scope.message = data.message;
+                console.log(data);
+            });
+    };
+
+    $scope.reset = function () {
+        $scope.user = angular.copy($scope.master);
+    };
+    $scope.reset();
+});
+</script>
+</body>
+</html>
